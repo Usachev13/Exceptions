@@ -29,10 +29,10 @@ public class Main {
 
     }
     public static void checkPassword(String password, String confirmPassword) throws wrongPasswordException{
-        if (!password.matches("^[a-zA-Z0-9_]{1,20}$")) {} else {
-            throw new wrongPasswordException(password);
-        }if (!password.equals(confirmPassword)){
-            throw new wrongPasswordException(password);
+        if (!password.matches("^[a-zA-Z0-9_]{1,20}$")) {
+            if (!password.equals(confirmPassword)) {
+                throw new wrongPasswordException(password);
+            }
         }
 
         }
